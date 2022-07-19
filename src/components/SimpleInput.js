@@ -37,16 +37,16 @@ const SimpleInput = (props) => {
 
     setEnteredNameTouched(true);
 
-    // if (enteredName.trim() === "") {
-    //   setEnteredNameIsValid(false);
-    //   return;
-    // }
+    if (!enteredNameIsValid) {
+      return;
+    }
 
     console.log(enteredName);
     console.log(enteredValue.current.value);
 
     setEnteredName("");
-    enteredValue.current.value = "";
+    setEnteredNameTouched(false);
+    // enteredValue.current.value = ""; => NOT IDEAL! Not an ideal way to manipulate dom in react
   };
 
   const nameInputClasses = nameInputInvalid
