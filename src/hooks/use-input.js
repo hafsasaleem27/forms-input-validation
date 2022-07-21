@@ -8,7 +8,7 @@ const useInput = (validateValue) => {
   const hasError = !valueIsValid && isTouched;
 
   const inputChangeHandler = (event) => setEnteredValue(event.target.value);
-  const inputBlurHandler = (event) => setIsTouched(false);
+  const inputBlurHandler = (event) => setIsTouched(true);
 
   const reset = () => {
     setEnteredValue("");
